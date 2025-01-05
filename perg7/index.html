@@ -242,8 +242,20 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 </div>
 
 <!-- Botão "Continuar" com evento onclick -->
-<div class="continue-button" onclick="validateSelection()">Continuar</div>
+<div class="continue-button" onclick="openPopup()">Continuar</div>
 <div id="error-message" style="color: red; display: none;">Por favor, selecione uma opção.</div>
+
+<script>
+
+	function openPopup() {
+		if (typeof elementorProFrontend !== 'undefined' && elementorProFrontend.modules.popup) {
+			elementorProFrontend.modules.popup.showPopup({ id: 271 });
+		} else {
+			console.error('Elementor Pro frontend not loaded.');
+		}
+	}
+	
+	</script>
 
 <!-- Inclusão da biblioteca de confetti -->
 <script src="../../www.napoleon.com.br/codigos/confetti.min.js"></script>
